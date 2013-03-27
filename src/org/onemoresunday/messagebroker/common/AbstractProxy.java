@@ -23,9 +23,9 @@ import org.onemoresunday.messagebroker.messaging.MessageBrokerException;
  * Proxy is the class used on a client side to communicate with server (see AbstractStub description).
  * Proxy classes derived from this class are generated on the basis of interfaces defined in XML-files (.HBGA). 
  * These interfaces contain definitions for supported methods, events, user-defined data types and other relevant 
- * information. See org.onemoresunday.generated.api.SGPimMgrProxy as an example.
+ * information. See org.onemoresunday.messagebroker.generated.api.SGPimMgrProxy as an example.
  * 
- * @see org.onemoresunday.common.AbstractStub
+ * @see org.onemoresunday.messagebroker.common.AbstractStub
  * @author DBradul
  *
  ****************************************************************************************/
