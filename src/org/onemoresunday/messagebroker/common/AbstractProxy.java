@@ -21,18 +21,11 @@ import org.onemoresunday.messagebroker.messaging.MessageBrokerException;
  * Base class for all proxies.
  * 
  * Proxy is the class used on a client side to communicate with server (see AbstractStub description).
- * Proxy classes are generated on the basis of interfaces defined in XML-files (.HBGA). These interfaces contain 
- * definitions for supported methods, events, user-defined data types and other relevant information.
+ * Proxy classes derived from this class are generated on the basis of interfaces defined in XML-files (.HBGA). 
+ * These interfaces contain definitions for supported methods, events, user-defined data types and other relevant 
+ * information. See org.onemoresunday.generated.api.SGPimMgrProxy as an example.
  * 
- * With the help of GCFAPICodegen tool the XML files are transformed into a set of java-files. This classes 
- * need to be embedded into a user application to implement either client or server side (or both). For this 
- * XXXProxy and XXXStub classes used respectively (XXX stand for the interface name).
- * 
- * The generated classes depend on the rest of packages to provide functionality of asynchronous communication 
- * between server (AbstractStub-derived class) and client (AbstractProxy-derived class). By using instance name it is 
- * possible to instantiate several servers. One server can serve for several clients.
- * 
- * @see AbstractStub
+ * @see org.onemoresunday.common.AbstractStub
  * @author DBradul
  *
  ****************************************************************************************/
