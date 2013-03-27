@@ -4,7 +4,7 @@ MessageBroker
 The project provides functionality for asynchronous communication with messages in JSON-like format.
 
 The communication between server and client is implemented by sending and receiving messages via common data bus - 
-MessageBroker. The GCF format (Generic Communication Format) which used for message (de)serialization allows to encode 
+MessageBroker. The GCF format (Generic Communication Format) which is used for message (de)serialization allows to encode 
 sender and receiver addresses within the message. 
 
 Each server has its own interface defined in terms of supported methods, events and user-defined data types. 
