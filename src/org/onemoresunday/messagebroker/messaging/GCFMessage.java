@@ -344,6 +344,7 @@ public class GCFMessage
    }
    
    /*************************************************************************************
+    * Get message timestamp in a user-friendly form
     * 
     * @param format - Date/Time format string. E.g.: yyyy-MM-dd HH:mm:ss.SSS
     * @param local - Locale
