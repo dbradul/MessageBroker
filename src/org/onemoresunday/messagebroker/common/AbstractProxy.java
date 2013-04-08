@@ -43,7 +43,7 @@ public abstract class AbstractProxy
     * */
    protected long mTimeout = -1; // in milliseconds
 
-   protected MessageBroker mMessageRouter;
+   protected MessageBroker mMessageBroker;
 
    protected GCFMessage mRawMessage = null;
 
@@ -158,7 +158,7 @@ public abstract class AbstractProxy
     */
    public void setBroker(MessageBroker broker)
    {
-      mMessageRouter = broker;
+      mMessageBroker = broker;
    }
    
    /*******************************************************************************
@@ -169,7 +169,7 @@ public abstract class AbstractProxy
     */
    public MessageBroker getBroker()
    {
-      return mMessageRouter;
+      return mMessageBroker;
    }
    
    /*************************************************************************************

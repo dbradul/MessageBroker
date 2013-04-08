@@ -247,6 +247,8 @@ public class MessageBroker
                
                while (null != (message = mIncomingMsgQueue.take()))
                {
+                  System.out.println("MessageBroker::dispatchThread(" + message.getTimestampStr() + "): " + message.toString() );
+
                   // dispatch the response to the corresponding proxy
                   if (Type.RESP == message.getType())
                   {

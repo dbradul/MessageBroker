@@ -46,7 +46,7 @@ public class SGPimMgrProxy extends AbstractProxy
     */
    public int openRequest(GCFEnum pim_access_ctrl, GCFString database_filename, GCFEnum sync_mode, GCFList obj_types, GCFList open_props) throws MessageBrokerException
    {
-      int callId = mMessageRouter.generateNextCallID();
+      int callId = mMessageBroker.generateNextCallID();
 
       GCFMessage message = null;
       
@@ -70,7 +70,7 @@ public class SGPimMgrProxy extends AbstractProxy
       message.addParam( obj_types );
       message.addParam( open_props );
 
-      mMessageRouter.sendMessage(message, this);
+      mMessageBroker.sendMessage(message, this);
 
       return callId;
    }
@@ -80,7 +80,7 @@ public class SGPimMgrProxy extends AbstractProxy
     */
    public int closeRequest(GCFNumber pimmgr_id) throws MessageBrokerException
    {
-      int callId = mMessageRouter.generateNextCallID();
+      int callId = mMessageBroker.generateNextCallID();
 
       GCFMessage message = null;
       
@@ -96,7 +96,7 @@ public class SGPimMgrProxy extends AbstractProxy
       pimmgr_id.setName("pimmgr_id");
       message.addParam( pimmgr_id );
 
-      mMessageRouter.sendMessage(message, this);
+      mMessageBroker.sendMessage(message, this);
 
       return callId;
    }
@@ -106,7 +106,7 @@ public class SGPimMgrProxy extends AbstractProxy
     */
    public int getStatusRequest(GCFNumber pimmgr_id) throws MessageBrokerException
    {
-      int callId = mMessageRouter.generateNextCallID();
+      int callId = mMessageBroker.generateNextCallID();
 
       GCFMessage message = null;
       
@@ -122,7 +122,7 @@ public class SGPimMgrProxy extends AbstractProxy
       pimmgr_id.setName("pimmgr_id");
       message.addParam( pimmgr_id );
 
-      mMessageRouter.sendMessage(message, this);
+      mMessageBroker.sendMessage(message, this);
 
       return callId;
    }
@@ -132,7 +132,7 @@ public class SGPimMgrProxy extends AbstractProxy
     */
    public int synchronizeRequest(GCFNumber pimmgr_id, GCFEnum renew, GCFList obj_types) throws MessageBrokerException
    {
-      int callId = mMessageRouter.generateNextCallID();
+      int callId = mMessageBroker.generateNextCallID();
 
       GCFMessage message = null;
       
@@ -152,7 +152,7 @@ public class SGPimMgrProxy extends AbstractProxy
       message.addParam( renew );
       message.addParam( obj_types );
 
-      mMessageRouter.sendMessage(message, this);
+      mMessageBroker.sendMessage(message, this);
 
       return callId;
    }
@@ -162,7 +162,7 @@ public class SGPimMgrProxy extends AbstractProxy
     */
    public int synchronizeExtRequest(GCFNumber pimmgr_id, GCFEnum renew, GCFNumber queue, GCFList obj_types, GCFList sync_props) throws MessageBrokerException
    {
-      int callId = mMessageRouter.generateNextCallID();
+      int callId = mMessageBroker.generateNextCallID();
 
       GCFMessage message = null;
       
@@ -186,7 +186,7 @@ public class SGPimMgrProxy extends AbstractProxy
       message.addParam( obj_types );
       message.addParam( sync_props );
 
-      mMessageRouter.sendMessage(message, this);
+      mMessageBroker.sendMessage(message, this);
 
       return callId;
    }
@@ -196,7 +196,7 @@ public class SGPimMgrProxy extends AbstractProxy
     */
    public int synchronizeAbortRequest(GCFNumber pimmgr_id) throws MessageBrokerException
    {
-      int callId = mMessageRouter.generateNextCallID();
+      int callId = mMessageBroker.generateNextCallID();
 
       GCFMessage message = null;
       
@@ -212,7 +212,7 @@ public class SGPimMgrProxy extends AbstractProxy
       pimmgr_id.setName("pimmgr_id");
       message.addParam( pimmgr_id );
 
-      mMessageRouter.sendMessage(message, this);
+      mMessageBroker.sendMessage(message, this);
 
       return callId;
    }
@@ -222,7 +222,7 @@ public class SGPimMgrProxy extends AbstractProxy
     */
    public int synchronizeAbortExtRequest(GCFNumber pimmgr_id, GCFNumber queue, GCFList abort_props) throws MessageBrokerException
    {
-      int callId = mMessageRouter.generateNextCallID();
+      int callId = mMessageBroker.generateNextCallID();
 
       GCFMessage message = null;
       
@@ -242,7 +242,7 @@ public class SGPimMgrProxy extends AbstractProxy
       message.addParam( queue );
       message.addParam( abort_props );
 
-      mMessageRouter.sendMessage(message, this);
+      mMessageBroker.sendMessage(message, this);
 
       return callId;
    }
@@ -252,7 +252,7 @@ public class SGPimMgrProxy extends AbstractProxy
     */
    public int synchronizeAbortAllRequest(GCFNumber pimmgr_id, GCFList abort_props) throws MessageBrokerException
    {
-      int callId = mMessageRouter.generateNextCallID();
+      int callId = mMessageBroker.generateNextCallID();
 
       GCFMessage message = null;
       
@@ -270,7 +270,7 @@ public class SGPimMgrProxy extends AbstractProxy
       message.addParam( pimmgr_id );
       message.addParam( abort_props );
 
-      mMessageRouter.sendMessage(message, this);
+      mMessageBroker.sendMessage(message, this);
 
       return callId;
    }
@@ -280,7 +280,7 @@ public class SGPimMgrProxy extends AbstractProxy
     */
    public int synchronizeContinueRequest(GCFNumber pimmgr_id) throws MessageBrokerException
    {
-      int callId = mMessageRouter.generateNextCallID();
+      int callId = mMessageBroker.generateNextCallID();
 
       GCFMessage message = null;
       
@@ -296,7 +296,7 @@ public class SGPimMgrProxy extends AbstractProxy
       pimmgr_id.setName("pimmgr_id");
       message.addParam( pimmgr_id );
 
-      mMessageRouter.sendMessage(message, this);
+      mMessageBroker.sendMessage(message, this);
 
       return callId;
    }
@@ -306,7 +306,7 @@ public class SGPimMgrProxy extends AbstractProxy
     */
    public int synchronizeSuspendRequest(GCFNumber pimmgr_id) throws MessageBrokerException
    {
-      int callId = mMessageRouter.generateNextCallID();
+      int callId = mMessageBroker.generateNextCallID();
 
       GCFMessage message = null;
       
@@ -322,7 +322,7 @@ public class SGPimMgrProxy extends AbstractProxy
       pimmgr_id.setName("pimmgr_id");
       message.addParam( pimmgr_id );
 
-      mMessageRouter.sendMessage(message, this);
+      mMessageBroker.sendMessage(message, this);
 
       return callId;
    }
@@ -332,7 +332,7 @@ public class SGPimMgrProxy extends AbstractProxy
     */
    public int refreshRequest(GCFNumber pimmgr_id, GCFList obj_types) throws MessageBrokerException
    {
-      int callId = mMessageRouter.generateNextCallID();
+      int callId = mMessageBroker.generateNextCallID();
 
       GCFMessage message = null;
       
@@ -350,7 +350,7 @@ public class SGPimMgrProxy extends AbstractProxy
       message.addParam( pimmgr_id );
       message.addParam( obj_types );
 
-      mMessageRouter.sendMessage(message, this);
+      mMessageBroker.sendMessage(message, this);
 
       return callId;
    }
@@ -360,7 +360,7 @@ public class SGPimMgrProxy extends AbstractProxy
     */
    public int setTimeZoneAndDSTRequest(GCFNumber pimmgr_id, GCFString timezone_offset, GCFNumber dst_rule_id) throws MessageBrokerException
    {
-      int callId = mMessageRouter.generateNextCallID();
+      int callId = mMessageBroker.generateNextCallID();
 
       GCFMessage message = null;
       
@@ -380,7 +380,7 @@ public class SGPimMgrProxy extends AbstractProxy
       message.addParam( timezone_offset );
       message.addParam( dst_rule_id );
 
-      mMessageRouter.sendMessage(message, this);
+      mMessageBroker.sendMessage(message, this);
 
       return callId;
    }
@@ -390,7 +390,7 @@ public class SGPimMgrProxy extends AbstractProxy
     */
    public int getTimeZoneAndDSTRequest(GCFNumber pimmgr_id) throws MessageBrokerException
    {
-      int callId = mMessageRouter.generateNextCallID();
+      int callId = mMessageBroker.generateNextCallID();
 
       GCFMessage message = null;
       
@@ -406,7 +406,7 @@ public class SGPimMgrProxy extends AbstractProxy
       pimmgr_id.setName("pimmgr_id");
       message.addParam( pimmgr_id );
 
-      mMessageRouter.sendMessage(message, this);
+      mMessageBroker.sendMessage(message, this);
 
       return callId;
    }
@@ -416,7 +416,7 @@ public class SGPimMgrProxy extends AbstractProxy
     */
    public int getTimeZoneAndDSTRecalcStatusRequest(GCFNumber pimmgr_id) throws MessageBrokerException
    {
-      int callId = mMessageRouter.generateNextCallID();
+      int callId = mMessageBroker.generateNextCallID();
 
       GCFMessage message = null;
       
@@ -432,7 +432,7 @@ public class SGPimMgrProxy extends AbstractProxy
       pimmgr_id.setName("pimmgr_id");
       message.addParam( pimmgr_id );
 
-      mMessageRouter.sendMessage(message, this);
+      mMessageBroker.sendMessage(message, this);
 
       return callId;
    }
@@ -442,7 +442,7 @@ public class SGPimMgrProxy extends AbstractProxy
     */
    public int recalcTimeZoneAndDSTRequest(GCFNumber pimmgr_id) throws MessageBrokerException
    {
-      int callId = mMessageRouter.generateNextCallID();
+      int callId = mMessageBroker.generateNextCallID();
 
       GCFMessage message = null;
       
@@ -458,7 +458,7 @@ public class SGPimMgrProxy extends AbstractProxy
       pimmgr_id.setName("pimmgr_id");
       message.addParam( pimmgr_id );
 
-      mMessageRouter.sendMessage(message, this);
+      mMessageBroker.sendMessage(message, this);
 
       return callId;
    }
@@ -468,7 +468,7 @@ public class SGPimMgrProxy extends AbstractProxy
     */
    public int attachDeviceRequest(GCFNumber pimmgr_id, GCFNumber device_id, GCFList device_props) throws MessageBrokerException
    {
-      int callId = mMessageRouter.generateNextCallID();
+      int callId = mMessageBroker.generateNextCallID();
 
       GCFMessage message = null;
       
@@ -488,7 +488,7 @@ public class SGPimMgrProxy extends AbstractProxy
       message.addParam( device_id );
       message.addParam( device_props );
 
-      mMessageRouter.sendMessage(message, this);
+      mMessageBroker.sendMessage(message, this);
 
       return callId;
    }
@@ -498,7 +498,7 @@ public class SGPimMgrProxy extends AbstractProxy
     */
    public int detachDeviceRequest(GCFNumber pimmgr_id, GCFNumber device_id) throws MessageBrokerException
    {
-      int callId = mMessageRouter.generateNextCallID();
+      int callId = mMessageBroker.generateNextCallID();
 
       GCFMessage message = null;
       
@@ -516,7 +516,7 @@ public class SGPimMgrProxy extends AbstractProxy
       message.addParam( pimmgr_id );
       message.addParam( device_id );
 
-      mMessageRouter.sendMessage(message, this);
+      mMessageBroker.sendMessage(message, this);
 
       return callId;
    }
@@ -526,7 +526,7 @@ public class SGPimMgrProxy extends AbstractProxy
     */
    public int getDeviceInfoRequest(GCFNumber pimmgr_id, GCFString info_key) throws MessageBrokerException
    {
-      int callId = mMessageRouter.generateNextCallID();
+      int callId = mMessageBroker.generateNextCallID();
 
       GCFMessage message = null;
       
@@ -544,7 +544,7 @@ public class SGPimMgrProxy extends AbstractProxy
       message.addParam( pimmgr_id );
       message.addParam( info_key );
 
-      mMessageRouter.sendMessage(message, this);
+      mMessageBroker.sendMessage(message, this);
 
       return callId;
    }
@@ -554,7 +554,7 @@ public class SGPimMgrProxy extends AbstractProxy
     */
    public int deleteDeviceRequest(GCFNumber pimmgr_id, GCFList params) throws MessageBrokerException
    {
-      int callId = mMessageRouter.generateNextCallID();
+      int callId = mMessageBroker.generateNextCallID();
 
       GCFMessage message = null;
       
@@ -572,7 +572,7 @@ public class SGPimMgrProxy extends AbstractProxy
       message.addParam( pimmgr_id );
       message.addParam( params );
 
-      mMessageRouter.sendMessage(message, this);
+      mMessageBroker.sendMessage(message, this);
 
       return callId;
    }
@@ -582,7 +582,7 @@ public class SGPimMgrProxy extends AbstractProxy
     */
    public int authenticateRequest(GCFNumber pimmgr_id, GCFString service, GCFList params) throws MessageBrokerException
    {
-      int callId = mMessageRouter.generateNextCallID();
+      int callId = mMessageBroker.generateNextCallID();
 
       GCFMessage message = null;
       
@@ -602,7 +602,7 @@ public class SGPimMgrProxy extends AbstractProxy
       message.addParam( service );
       message.addParam( params );
 
-      mMessageRouter.sendMessage(message, this);
+      mMessageBroker.sendMessage(message, this);
 
       return callId;
    }
@@ -612,7 +612,7 @@ public class SGPimMgrProxy extends AbstractProxy
     */
    public int authenticateExtRequest(GCFNumber pimmgr_id, GCFNumber queue, GCFString service, GCFList params) throws MessageBrokerException
    {
-      int callId = mMessageRouter.generateNextCallID();
+      int callId = mMessageBroker.generateNextCallID();
 
       GCFMessage message = null;
       
@@ -634,7 +634,7 @@ public class SGPimMgrProxy extends AbstractProxy
       message.addParam( service );
       message.addParam( params );
 
-      mMessageRouter.sendMessage(message, this);
+      mMessageBroker.sendMessage(message, this);
 
       return callId;
    }
@@ -644,7 +644,7 @@ public class SGPimMgrProxy extends AbstractProxy
     */
    public int controlDeviceRequest(GCFNumber pimmgr_id, GCFList params) throws MessageBrokerException
    {
-      int callId = mMessageRouter.generateNextCallID();
+      int callId = mMessageBroker.generateNextCallID();
 
       GCFMessage message = null;
       
@@ -662,7 +662,7 @@ public class SGPimMgrProxy extends AbstractProxy
       message.addParam( pimmgr_id );
       message.addParam( params );
 
-      mMessageRouter.sendMessage(message, this);
+      mMessageBroker.sendMessage(message, this);
 
       return callId;
    }
@@ -672,7 +672,7 @@ public class SGPimMgrProxy extends AbstractProxy
     */
    public int controlObjectRequest(GCFNumber pimmgr_id, GCFEnum obj_type, GCFStruct instance, GCFString operation, GCFList params) throws MessageBrokerException
    {
-      int callId = mMessageRouter.generateNextCallID();
+      int callId = mMessageBroker.generateNextCallID();
 
       GCFMessage message = null;
       
@@ -696,7 +696,7 @@ public class SGPimMgrProxy extends AbstractProxy
       message.addParam( operation );
       message.addParam( params );
 
-      mMessageRouter.sendMessage(message, this);
+      mMessageBroker.sendMessage(message, this);
 
       return callId;
    }
@@ -706,7 +706,7 @@ public class SGPimMgrProxy extends AbstractProxy
     */
    public int getObjectInstancesRequest(GCFNumber pimmgr_id, GCFList object_types) throws MessageBrokerException
    {
-      int callId = mMessageRouter.generateNextCallID();
+      int callId = mMessageBroker.generateNextCallID();
 
       GCFMessage message = null;
       
@@ -724,7 +724,7 @@ public class SGPimMgrProxy extends AbstractProxy
       message.addParam( pimmgr_id );
       message.addParam( object_types );
 
-      mMessageRouter.sendMessage(message, this);
+      mMessageBroker.sendMessage(message, this);
 
       return callId;
    }
@@ -734,7 +734,7 @@ public class SGPimMgrProxy extends AbstractProxy
     */
    public int setObjectNotificationsRequest(GCFNumber pimmgr_id, GCFEnum obj_type, GCFStruct instance, GCFList notifications) throws MessageBrokerException
    {
-      int callId = mMessageRouter.generateNextCallID();
+      int callId = mMessageBroker.generateNextCallID();
 
       GCFMessage message = null;
       
@@ -756,7 +756,7 @@ public class SGPimMgrProxy extends AbstractProxy
       message.addParam( instance );
       message.addParam( notifications );
 
-      mMessageRouter.sendMessage(message, this);
+      mMessageBroker.sendMessage(message, this);
 
       return callId;
    }
@@ -766,7 +766,7 @@ public class SGPimMgrProxy extends AbstractProxy
     */
    public int clearObjectNotificationsRequest(GCFNumber pimmgr_id, GCFEnum obj_type, GCFStruct instance, GCFList notifications) throws MessageBrokerException
    {
-      int callId = mMessageRouter.generateNextCallID();
+      int callId = mMessageBroker.generateNextCallID();
 
       GCFMessage message = null;
       
@@ -788,7 +788,7 @@ public class SGPimMgrProxy extends AbstractProxy
       message.addParam( instance );
       message.addParam( notifications );
 
-      mMessageRouter.sendMessage(message, this);
+      mMessageBroker.sendMessage(message, this);
 
       return callId;
    }
@@ -798,7 +798,7 @@ public class SGPimMgrProxy extends AbstractProxy
     */
    public int getSubfoldersRequest(GCFNumber pimmgr_id, GCFEnum obj_type, GCFStruct instance, GCFString folder) throws MessageBrokerException
    {
-      int callId = mMessageRouter.generateNextCallID();
+      int callId = mMessageBroker.generateNextCallID();
 
       GCFMessage message = null;
       
@@ -820,7 +820,7 @@ public class SGPimMgrProxy extends AbstractProxy
       message.addParam( instance );
       message.addParam( folder );
 
-      mMessageRouter.sendMessage(message, this);
+      mMessageBroker.sendMessage(message, this);
 
       return callId;
    }
@@ -830,7 +830,7 @@ public class SGPimMgrProxy extends AbstractProxy
     */
    public int setEventDestinationRequest(GCFString destination) throws MessageBrokerException
    {
-      int callId = mMessageRouter.generateNextCallID();
+      int callId = mMessageBroker.generateNextCallID();
 
       GCFMessage message = null;
       
@@ -846,7 +846,7 @@ public class SGPimMgrProxy extends AbstractProxy
       destination.setName("destination");
       message.addParam( destination );
 
-      mMessageRouter.sendMessage(message, this);
+      mMessageBroker.sendMessage(message, this);
 
       return callId;
    }
@@ -1127,14 +1127,14 @@ public class SGPimMgrProxy extends AbstractProxy
    {
       String destAddress = getInstanceName().isEmpty() ? "APP_ID" : "APP_ID" + "_" + getInstanceName();
 
-      mMessageRouter.addEventSubscriber(this, new GCFMessage("EV_PIMMGR_STATUS_CHANGED", destAddress, null));
-      mMessageRouter.addEventSubscriber(this, new GCFMessage("EV_PIMMGR_SYNCHRONIZE_PROGRESS", destAddress, null));
-      mMessageRouter.addEventSubscriber(this, new GCFMessage("EV_PIMMGR_SYNCHRONIZE_PROGRESS_EXT", destAddress, null));
-      mMessageRouter.addEventSubscriber(this, new GCFMessage("EV_PIMMGR_AUTHENTICATION_REQUIRED", destAddress, null));
-      mMessageRouter.addEventSubscriber(this, new GCFMessage("EV_PIMMGR_AUTHENTICATION_REQUIRED_EXT", destAddress, null));
-      mMessageRouter.addEventSubscriber(this, new GCFMessage("EV_PIMMGR_ARCHIVING_PROGRESS", destAddress, null));
-      mMessageRouter.addEventSubscriber(this, new GCFMessage("EV_PIMMGR_OBJ_NOTIFICATION", destAddress, null));
-      mMessageRouter.addEventSubscriber(this, new GCFMessage("EV_PIMMGR_DEVICE_ACCESS", destAddress, null));
+      mMessageBroker.addEventSubscriber(this, new GCFMessage("EV_PIMMGR_STATUS_CHANGED", destAddress, null));
+      mMessageBroker.addEventSubscriber(this, new GCFMessage("EV_PIMMGR_SYNCHRONIZE_PROGRESS", destAddress, null));
+      mMessageBroker.addEventSubscriber(this, new GCFMessage("EV_PIMMGR_SYNCHRONIZE_PROGRESS_EXT", destAddress, null));
+      mMessageBroker.addEventSubscriber(this, new GCFMessage("EV_PIMMGR_AUTHENTICATION_REQUIRED", destAddress, null));
+      mMessageBroker.addEventSubscriber(this, new GCFMessage("EV_PIMMGR_AUTHENTICATION_REQUIRED_EXT", destAddress, null));
+      mMessageBroker.addEventSubscriber(this, new GCFMessage("EV_PIMMGR_ARCHIVING_PROGRESS", destAddress, null));
+      mMessageBroker.addEventSubscriber(this, new GCFMessage("EV_PIMMGR_OBJ_NOTIFICATION", destAddress, null));
+      mMessageBroker.addEventSubscriber(this, new GCFMessage("EV_PIMMGR_DEVICE_ACCESS", destAddress, null));
       
    }
 
@@ -1143,7 +1143,7 @@ public class SGPimMgrProxy extends AbstractProxy
     */
    public void unregisterFromEvents()
    {
-      mMessageRouter.removeEventSubscriber(this);
+      mMessageBroker.removeEventSubscriber(this);
    }
    
    /****************************************************************************************
@@ -1151,7 +1151,7 @@ public class SGPimMgrProxy extends AbstractProxy
     */
    public void setBroker(MessageBroker router)
    {
-      mMessageRouter = router;
+      mMessageBroker = router;
    }   
 
    /*---------------------------------Responses --------------------------------------*/
