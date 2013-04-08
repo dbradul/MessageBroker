@@ -58,9 +58,8 @@ public class MessageBrokerTest
          mMsgBroker.shutdown();
       }
    }
+      
 
-   
-   
    @Test
    public void testResponseDispatching() throws Exception
    {
@@ -88,11 +87,8 @@ public class MessageBrokerTest
       assertTrue(latch.await(10000, TimeUnit.MILLISECONDS));
       assertTrue(timeoutExpired.getBooleanValue());
    }
+      
 
-   
-   
-   
-   
    @Test
    public void testEventsDispatching() throws Exception
    {
@@ -133,10 +129,7 @@ public class MessageBrokerTest
       assertTrue(latch.await(10000, TimeUnit.MILLISECONDS));
       assertTrue(result.getBooleanValue());
    }
-   
-   
-   
-   
+
 
    @Test
    public void testTimeout() throws Exception

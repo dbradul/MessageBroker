@@ -140,7 +140,4 @@ public class SGPimMgrStubImpl extends SGPimMgrStub
           ex.printStackTrace();
       }
    }
-
-
-  
 }
