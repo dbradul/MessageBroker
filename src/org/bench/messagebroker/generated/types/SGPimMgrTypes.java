@@ -7,7 +7,7 @@
 * @file          SGPimMgr.hbga
 * @author        GCFAPICodegen
 */
-package org.onemoresunday.messagebroker.generated.types;
+package org.bench.messagebroker.generated.types;
 
 /**********************************************************************
  * Provides Enum types from SGPimMgr.hbga

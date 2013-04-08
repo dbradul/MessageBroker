@@ -8,10 +8,10 @@
  * @author        DBradul
  * 
  ****************************************************************************************/
-package org.onemoresunday.messagebroker.common;
+package org.bench.messagebroker.common;
 
-import org.onemoresunday.messagebroker.messaging.GCFMessage;
-import org.onemoresunday.messagebroker.messaging.MessageBroker;
+import org.bench.messagebroker.messaging.GCFMessage;
+import org.bench.messagebroker.messaging.MessageBroker;
 
 
 /****************************************************************************************
@@ -23,7 +23,7 @@ import org.onemoresunday.messagebroker.messaging.MessageBroker;
  * These interfaces contain definitions for supported methods, events, user-defined data types and other relevant
  * information. See org.onemoresunday.messagebroker.generated.api.SGPimMgrStub as an example.
  * 
- * @see org.onemoresunday.messagebroker.generated.api.SGPimMgrStub
+ * @see org.bench.messagebroker.generated.api.SGPimMgrStub
  * @author DBradul
  *
  ****************************************************************************************/

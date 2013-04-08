@@ -7,9 +7,9 @@
  * @file    MessageRouterTest.java
  * @author  DBradul
  ******************************************************************************/
-package org.onemoresunday.messagebroker.messaging;
+package org.bench.messagebroker.messaging;
 
-import static org.onemoresunday.messagebroker.generated.types.SGPimMgrTypes.Result.PIMMGR_RESULT_OK;
+import static org.bench.messagebroker.generated.types.SGPimMgrTypes.Result.PIMMGR_RESULT_OK;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Collections;
@@ -18,6 +18,10 @@ import java.util.TreeSet;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
+import org.bench.messagebroker.generated.api.SGPimMgrProxy;
+import org.bench.messagebroker.messaging.GCFMessage;
+import org.bench.messagebroker.messaging.MessageBroker;
+import org.bench.messagebroker.messaging.MessageBrokerException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -28,8 +32,6 @@ import org.onemoresunday.gcfparser.GCFNumber;
 import org.onemoresunday.gcfparser.GCFString;
 
 //import com.harmanbecker.jehmi.JEHMIBaseTest;
-import org.onemoresunday.messagebroker.generated.api.SGPimMgrProxy;
-//import com.harmanbecker.jehmi.gcfapi.dummy.SGPimMgrStubImplDummy;
 
 /******************************************************************************
  * Tests for MessageRouter

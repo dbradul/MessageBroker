@@ -7,20 +7,20 @@
 * @file          SGPimMgrProxy.java
 * @author        GCFAPICodegen
 */
-package org.onemoresunday.messagebroker.generated.api;
+package org.bench.messagebroker.generated.api;
 
+import org.bench.messagebroker.common.AbstractProxy;
+import org.bench.messagebroker.messaging.GCFMessage;
+import org.bench.messagebroker.messaging.MessageBroker;
+import org.bench.messagebroker.messaging.MessageBrokerException;
+import org.bench.messagebroker.messaging.GCFMessage.Type;
 import org.onemoresunday.gcfparser.GCFEnum;
 import org.onemoresunday.gcfparser.GCFList;
 import org.onemoresunday.gcfparser.GCFNumber;
 import org.onemoresunday.gcfparser.GCFString;
 import org.onemoresunday.gcfparser.GCFStruct;
 
-import org.onemoresunday.messagebroker.messaging.GCFMessage;
-import org.onemoresunday.messagebroker.messaging.MessageBroker;
-import org.onemoresunday.messagebroker.messaging.GCFMessage.Type;
-import org.onemoresunday.messagebroker.messaging.MessageBrokerException;
 
-import org.onemoresunday.messagebroker.common.AbstractProxy;
 
 /**********************************************************************
  * SGPimMgrProxy

@@ -7,14 +7,14 @@
 * @file          SGPimMgrStubImpl.java
 * @author        GCFAPICodegen
 */
-package org.onemoresunday.messagebroker.messaging;
+package org.bench.messagebroker.messaging;
 
+import org.bench.messagebroker.generated.api.SGPimMgrStub;
+import org.bench.messagebroker.messaging.GCFMessage;
+import org.bench.messagebroker.messaging.MessageBrokerException;
+import org.bench.messagebroker.messaging.GCFMessage.Type;
 import org.onemoresunday.gcfparser.*;
-import org.onemoresunday.messagebroker.generated.api.SGPimMgrStub;
 
-import org.onemoresunday.messagebroker.messaging.GCFMessage;
-import org.onemoresunday.messagebroker.messaging.MessageBrokerException;
-import org.onemoresunday.messagebroker.messaging.GCFMessage.Type;
 
 /***************************************************************************
  * SGPimMgrStubImpl

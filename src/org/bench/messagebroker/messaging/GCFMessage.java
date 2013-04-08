@@ -7,7 +7,7 @@
  * @file    GCFMessage.java
  * @author  DBradul
  *****************************************************************************************/
-package org.onemoresunday.messagebroker.messaging;
+package org.bench.messagebroker.messaging;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

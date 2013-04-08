@@ -7,7 +7,7 @@
 * @file    MessageBrokerException.java
 * @author  DBradul
 ******************************************************************************************/
-package org.onemoresunday.messagebroker.messaging;
+package org.bench.messagebroker.messaging;
 
 /****************************************************************************************
  * MessageBroker exception

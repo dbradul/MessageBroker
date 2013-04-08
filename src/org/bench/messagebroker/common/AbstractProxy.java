@@ -8,13 +8,13 @@
  * @author        DBradul
  * 
  ****************************************************************************************/
-package org.onemoresunday.messagebroker.common;
+package org.bench.messagebroker.common;
 
 import java.io.IOException;
 
-import org.onemoresunday.messagebroker.messaging.GCFMessage;
-import org.onemoresunday.messagebroker.messaging.MessageBroker;
-import org.onemoresunday.messagebroker.messaging.MessageBrokerException;
+import org.bench.messagebroker.messaging.GCFMessage;
+import org.bench.messagebroker.messaging.MessageBroker;
+import org.bench.messagebroker.messaging.MessageBrokerException;
 
 /****************************************************************************************
  * 
@@ -25,7 +25,7 @@ import org.onemoresunday.messagebroker.messaging.MessageBrokerException;
  * These interfaces contain definitions for supported methods, events, user-defined data types and other relevant 
  * information. See org.onemoresunday.messagebroker.generated.api.SGPimMgrProxy as an example.
  * 
- * @see org.onemoresunday.messagebroker.common.AbstractStub
+ * @see org.bench.messagebroker.common.AbstractStub
  * @author DBradul
  *
  ****************************************************************************************/
