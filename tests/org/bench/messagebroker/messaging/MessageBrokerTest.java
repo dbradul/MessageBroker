@@ -137,13 +137,12 @@ public class MessageBrokerTest
       final CountDownLatch latch = new CountDownLatch(1);
       final GCFString timeoutExpired = new GCFString("FALSE");
 
-      // intentionally suppress request processing to enforce timeout exception
       SGPimMgrStubImpl stub = new SGPimMgrStubImpl()
       {
          @Override
          public void refreshRequest(GCFNumber pimmgrId, GCFList objTypes)
          {
-            //
+            // intentionally suppress request processing to enforce timeout exception
          }
       };
 
