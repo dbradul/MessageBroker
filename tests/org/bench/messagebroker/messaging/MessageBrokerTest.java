@@ -26,6 +26,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import org.onemoresunday.gcfparser.GCFBoolean;
 import org.onemoresunday.gcfparser.GCFEnum;
 import org.onemoresunday.gcfparser.GCFList;
 import org.onemoresunday.gcfparser.GCFNumber;
@@ -64,7 +65,8 @@ public class MessageBrokerTest
    public void testResponseDispatching() throws Exception
    {
       final CountDownLatch latch = new CountDownLatch(1);
-      final GCFString timeoutExpired = new GCFString("FALSE");
+      final GCFBoolean responseReceived = new GCFBoolean();
+      responseReceived.setValue(false);
 
       mMsgBroker.registerStub(SGPimMgrStubImpl.getInstance());
 
@@ -75,7 +77,7 @@ public class MessageBrokerTest
          {
             if (result.equals(PIMMGR_RESULT_OK))
             {
-               timeoutExpired.setValue("TRUE");
+               responseReceived.setValue(true);
             }
             latch.countDown();
          }
@@ -85,7 +87,7 @@ public class MessageBrokerTest
 
       // wait till the count reaches zero (true) or waiting timeout expires (false)
       assertTrue(latch.await(10000, TimeUnit.MILLISECONDS));
-      assertTrue(timeoutExpired.getBooleanValue());
+      assertTrue(responseReceived.getBooleanValue());
    }
       
 
@@ -93,12 +95,13 @@ public class MessageBrokerTest
    public void testEventsDispatching() throws Exception
    {
       final CountDownLatch latch = new CountDownLatch(1);
-      final GCFString result = new GCFString("FALSE");
+      final GCFBoolean allEventsReceived = new GCFBoolean();
+      allEventsReceived.setValue(false);
 
       SGPimMgrStubImpl stub = SGPimMgrStubImpl.getInstance();
       mMsgBroker.registerStub(stub);
 
-      final Set<Integer> resultSet = Collections.synchronizedSet(new TreeSet<Integer>());
+      final Set<Integer> sentEventsSet = Collections.synchronizedSet(new TreeSet<Integer>());
 
       SGPimMgrProxy proxy = new SGPimMgrProxy()
       {
@@ -106,12 +109,12 @@ public class MessageBrokerTest
          protected void eventStatusChanged(GCFNumber pimmgr_id, GCFEnum status,
                GCFEnum device_status, GCFList params) throws MessageBrokerException
          {
-            resultSet.remove(pimmgr_id.getIntValue());
+            sentEventsSet.remove(pimmgr_id.getIntValue());
 
-            if (resultSet.size() == 0)
+            if (sentEventsSet.size() == 0)
             {
                latch.countDown();
-               result.setValue("TRUE");
+               allEventsReceived.setValue(true);
             }
          }
       };
@@ -120,14 +123,14 @@ public class MessageBrokerTest
 
       for (int i = 0; i < 10; i++)
       {
-         resultSet.add(i);
+         sentEventsSet.add(i);
          stub.eventStatusChanged(new GCFNumber("" + i), new GCFEnum("PIMMGR_OPEN"),
                new GCFEnum("PIMMGR_DEVICE_DETACHED"), new GCFList());
       }
 
       // wait till the count reaches zero (true) or waiting timeout expires (false)
       assertTrue(latch.await(10000, TimeUnit.MILLISECONDS));
-      assertTrue(result.getBooleanValue());
+      assertTrue(allEventsReceived.getBooleanValue());
    }
 
 
@@ -135,14 +138,15 @@ public class MessageBrokerTest
    public void testTimeout() throws Exception
    {
       final CountDownLatch latch = new CountDownLatch(1);
-      final GCFString timeoutExpired = new GCFString("FALSE");
+      final GCFBoolean timeoutExpired = new GCFBoolean();
+      timeoutExpired.setValue(false);
 
       SGPimMgrStubImpl stub = new SGPimMgrStubImpl()
       {
          @Override
          public void refreshRequest(GCFNumber pimmgrId, GCFList objTypes)
          {
-            // intentionally suppress request processing to enforce timeout exception
+            // suppress request processing to enforce timeout exception
          }
       };
 
@@ -168,7 +172,7 @@ public class MessageBrokerTest
       proxy.refreshRequest(new GCFNumber("1"), new GCFList("type_list"));
 
       // wait till the count reaches zero (true) or waiting timeout expires (false)
-      assertTrue(latch.await(2000, TimeUnit.MILLISECONDS));
+      latch.await(2000, TimeUnit.MILLISECONDS);
       assertTrue(timeoutExpired.getBooleanValue());
    }
 
