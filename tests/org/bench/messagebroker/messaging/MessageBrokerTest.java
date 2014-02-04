@@ -163,7 +163,7 @@ public class MessageBrokerTest
          @Override
          public void onTimeoutExpired(GCFMessage message)
          {
-            timeoutExpired.setValue("TRUE");
+            timeoutExpired.setValue(true);
             latch.countDown();
          }
       };
